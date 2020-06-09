@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#tutorial-1">Tutorial 1</a></li>
+<li><a href="#introductions">Introductions</a><ul>
+<li><a href="#number-representation">Number Representation</a><ul>
+<li><a href="#question-2">Question 2</a></li>
+</ul></li>
+<li><a href="#bitwise-operators">Bitwise Operators</a><ul>
+<li><a href="#question-3">Question 3</a></li>
+<li><a href="#question-6">Question 6</a></li>
+</ul></li>
+<li><a href="#pointers">Pointers</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="tutorial-1">Tutorial 1</h1>
+<h1 id="introductions">Introductions</h1>
+<ul>
+<li>For most questions, ask on Discourse (You’ll get a faster response!)</li>
+<li>I can answer some more personal questions if you email me: o.richards@unsw.edu.au</li>
+</ul>
+<h2 id="number-representation">Number Representation</h2>
+<ul>
+<li>What is the difference between a int8_t and int16_t? What numbers can these represent</li>
+<li>What base do computers represent numbers as?</li>
+<li>Why do software engineers often talk about octal and hex?</li>
+<li>Be able to convert numbers binary &lt;-&gt; octal &lt;-&gt; hex &lt;-&gt; decimal</li>
+</ul>
+<h3 id="question-2">Question 2</h3>
+<p>Show what the following decimal values look like in 8-bit binary, 3-digit octal, and 2-digit hexadecimal:</p>
+<pre><code>a. 1
+b. 8
+c. 10
+d. 15
+e. 16
+f. 100
+g. 127
+h. 200 </code></pre>
+<p>How could I write a C program to answer this question?</p>
+<h2 id="bitwise-operators">Bitwise Operators</h2>
+<ul>
+<li>What do each of the following operators do:
+<ul>
+<li>&amp;</li>
+<li>|</li>
+<li>&lt;&lt;</li>
+<li>&gt;&gt;</li>
+</ul></li>
+<li>What is the difference between &amp; and &amp;&amp;?
+<ul>
+<li>Calculate 5 &amp;&amp; 6 and 5 &amp; 6</li>
+</ul></li>
+</ul>
+<h3 id="question-3">Question 3</h3>
+<p>Assume that we have the following 16-bit variables defined and initialised:</p>
+<p><code>uint16_t a = 0x5555, b = 0xAAAA, c = 0x0001;</code></p>
+<p>What are the values of the following expressions:</p>
+<pre><code>a | b (bitwise OR)
+a &amp; b (bitwise AND)
+a ^ b (bitwise XOR)
+a &amp; ~b (bitwise AND)
+c &lt;&lt; 6 (left shift)
+a &gt;&gt; 4 (right shift)
+a &amp; (b &lt;&lt; 1)
+b | c
+a &amp; ~c </code></pre>
+<p>Give your answer in hexadecimal, but you might find it easier to convert to binary to work out the solution.</p>
+<h3 id="question-6">Question 6</h3>
+<p>Given the following type definition <code>typedef unsigned int Word;</code></p>
+<p>Write a function</p>
+<p><code>Word reverseBits(Word w);</code></p>
+<p>… which reverses the order of the bits in the variable w.</p>
+<p>For example: If w == 0x01234567, the underlying bit string looks like:</p>
+<p><code>0000 0001 0010 0011 0100 0101 0110 0111</code></p>
+<p>which, when reversed, looks like:</p>
+<p><code>1110 0110 1010 0010 1100 0100 1000 0000</code></p>
+<p>which is 0xE6A2C480 in hexadecimal.</p>
+<h2 id="pointers">Pointers</h2>
+</body>
+</html>
