@@ -33,6 +33,9 @@ Word reverseBits(Word w) {
             // We need to insert a 1 into ret!
             // The funky maths is to reverse the index
             // I.e. if bit_num is 1, we want a mask with a 1 in the 30th bit
+            // For the lab, think about how array indexing works versus this bit masking
+            // If I go array[0] does this reference the left or rightmost element?
+            // How about if I do (w & (1u << 0)) - Which bit is this inspecting
             Word insert_mask = 
                 (1u << (num_bits - bit_num - 1));
             // We now have (for bit_num == 1) insert_mask of:
