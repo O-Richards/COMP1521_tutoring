@@ -8,6 +8,7 @@
     * The lab is the best time for you to ask assignment questions!!!!
 * Labs are automarked and must be submitted by Sunday
 * If you have a camera and/or mic leave them on! (unless it is noisy)
+* 
 
 ## Number Representation
 
