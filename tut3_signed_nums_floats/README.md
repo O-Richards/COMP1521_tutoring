@@ -6,6 +6,7 @@ e.g. 5 == 1001
 But a computer would be pretty useless if you could only do calculations with positive integers!
 
 So out tasks this week are to look at how to represent:
+
 1. Signed numbers e.g. -5
 2. Real numbers i.e. non-integers e.g. 2.5
 
@@ -27,23 +28,23 @@ Why the negative result? How can you make it produce the correct result?
 
 Assume that the following hexadecimal values are 16-bit twos-complement. Convert each to the corresponding decimal value. 
 
-i. 0x0013
-ii. 0x0444
-iii. 0x1234
-iv. 0xffff
-v. 0x8000
+1. 0x0013
+2. 0x0444
+3. 0x1234
+4. 0xffff
+5. 0x8000
 
 ## Question 3 - decimal -> signed 2's compliment
 
 Give a representation for each of the following decimal values in 16-bit twos-complement bit-strings. Show the value in binary, octal and hexadecimal.
 
-a. 1
-b. 100
-c. 1000
-d. 10000
-e. 100000
-f. -5
-h. -100 
+1. 1
+2. 100
+3. 1000
+4. 10000
+5. 100000
+6. -5
+7. -100 
 
 ## Question 4 - Float Representation
 
