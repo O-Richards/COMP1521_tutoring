@@ -16,7 +16,8 @@
     * Can be a pointer to an instruction (in the .text segment)
 
 Making global variables:
-    ```
+
+```C
     .data # globals are in data segment of memory!
     HELLO_WORLD:    # The label
         .asciiz "Hello World"   # Allocates memory
@@ -34,12 +35,13 @@ Making global variables:
     lw  $t0, (global_x)
     addi $t0, $t0, 1
     sw  $t0, (global_x)
-    ```
+```
 
 ## Branching
     * How we implement conditional logic, and while statements
     * We jump our program's execution to some label e.g.
-    ```C
+
+```C
     int x = 5;
     if (x == 5) {
         x = 10;
@@ -54,6 +56,6 @@ Making global variables:
 if:
     li  $t0, 10
 if_end:
-    ```
+```
 
     * Always write out your labels + structure first then fill in the logic!
