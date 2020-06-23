@@ -8,7 +8,10 @@
 
 
 ## Operations
-    * How would I add two numbers?
+    * Lots of operations you can perform on the registers
+    * e.g. add, addi, mul, mod, ...
+    * What is an immediate?
+    * Operations can *only* be applied to registers, not directly to RAM!
 
 ## Labels
     * Labels are addresses! i.e. a pointer!
@@ -46,8 +49,9 @@ Making global variables:
     if (x == 5) {
         x = 10;
     }
-    ```
-    ```
+```
+
+```
     # x = $t0
     li  $t0, 5
 
@@ -59,3 +63,7 @@ if_end:
 ```
 
     * Always write out your labels + structure first then fill in the logic!
+    * General approach to conditional statements:
+        * Have a label for the `if` and the `else`
+        * Calculate the negation of the conditional statement in C
+        * Branch to the else if true
