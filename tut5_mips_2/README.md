@@ -7,6 +7,25 @@
 * Take a look at the addressing modes in the docs https://cgi.cse.unsw.edu.au/~cs1521/20T2/resources/spim.html
 * When you see ($t0) think of it as saying explicitly "Register $t0 contains a pointer to the data I want"
 
+### Addressing Modes
+```
+    # Directly from label
+    lw  $t0, label
+    lw  $t0, label + 4 # Grab the word stored at address label + 4
+
+    # Indirect pointer stored in register
+    la  $t0, label
+    lw  $t0, ($t0)
+
+    # Offset from indirect pointer
+    la  $t0, label
+    lw  $t0, 4($t0) # Grab the word stored at address label + 4
+
+    # Combine them all together
+    la  $t0, 2
+    lw  $t0, label + 4($t0) # Grab the word stored at address label + 6
+```
+
 ## The Data Segment
 
 The data segment is where we store global variables
