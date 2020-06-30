@@ -114,4 +114,4 @@ addi    $sp, $sp, 20
 jr      $ra
 ```
 
-[stack_frame] resources/mips_stack_frame.png
+[stack_frame]: resources/mips_stack_frame.png
