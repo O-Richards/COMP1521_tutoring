@@ -8,7 +8,8 @@
 * When you see ($t0) think of it as saying explicitly "Register $t0 contains a pointer to the data I want"
 
 ### Addressing Modes
-```
+
+```assembly
     # Directly from label
     lw  $t0, label
     lw  $t0, label + 4 # Grab the word stored at address label + 4
@@ -33,7 +34,7 @@ We can use assembler directives to store different types of values or allocate s
 
 e.g.
 
-```
+```assembly
     .data # Place the following in the data segment
 # Variables in the data segment have the form:
 #label:     .type   value
@@ -52,7 +53,7 @@ and what value is stored in each 4-byte memory cell?
 
 ### Align Directive
 
-```
+```assembly
     .data
 str: .asciiz "h"
      .align   4 # Align to the next address divisible by 4
@@ -73,3 +74,44 @@ Remember, by default SPIM used little-endian byte ordering!
 I.e. the least significant byte is at the base address
 
 When we use lb, the other 3 bytes are sign extended!
+
+## Stack Frame
+
+* To be able to call functions inside other functions we need to:
+    * Preserve the $ra, $sp, $fp and $s\* registers accross function calls
+* We use the $sp and $fp to indicate where the stack frame for the current function is
+* We use a function prologue and epilog to:
+    * Save the previous $fp, $ra and modified $s\* registers to the stack, then restore these values before returning
+
+![alt text][stack_frame]
+
+
+### A typical function structure
+
+```assembly
+# Uses $s0, $s1
+# Clobbers $t0, ...
+function:
+# function prolog
+sw      $fp, -4($sp)
+sw      $ra, -8($sp)
+sw      $s0, -12($sp)
+sw      $s1, -16($sp)
+addi    $sp, $sp, -20
+
+# Function does its work here
+
+
+# Function epilog
+# Restore all the registers saved to the stack
+lw      $s1, 4($sp)
+lw      $s0, 8($sp)
+lw      $ra, 12($sp)
+lw      $fp, 16($sp)
+addi    $sp, $sp, 20
+
+# Return to caller
+jr      $ra
+```
+
+[stack_frame] resources/mips_stack_frame.png
