@@ -10,11 +10,9 @@ char flag[6][12] = {
 };
 
 int main(void) {
-    char *cur_letter = &flag[0][0];
     for (int row = 0; row < 6; row++) {
         for (int col = 0; col < 12; col++) {
-            printf ("%c", *cur_letter);
-            cur_letter++;
+            printf ("%c", flag[row][col]);
         }
         printf ("\n");
     }
