@@ -3,8 +3,11 @@
 ## Introductions
 
 What is a syscall?
+
     * A function which is provided by the kernel
+
 Give some examples of a syscall:
+
     * Anything involving I/O or operating system
     * e.g. fopen(), printf(), scanf(), open(), lseek(), socket(), chmod(), ...
 
